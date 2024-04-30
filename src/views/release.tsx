@@ -9,9 +9,21 @@ export default function Release() {
     const location = useLocation();
     const history = useHistory();
     const [versions, setVersions] = useState<{ name: string; path: string }[]>([]);
-    const [current, setCurrent] = useState(location.pathname.split("/release/detail/")[1]);
+    const [current, setCurrent] = useState("");
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        if (!versions.length) {
+            return;
+        }
+        const param = location.pathname.split("/release/detail/")[1];
+        if (!param) {
+            const name = versions[0].name;
+            setCurrent(name);
+            history.push(`/release/detail/${name}`);
+        } else {
+            setCurrent(param);
+        }
+    }, [location.pathname, versions]);
 
     useEffect(() => {
         releaseApi.getVersionList().then((v) => {
