@@ -1,0 +1,36 @@
+main {
+    height: calc(100% - 48px);
+    overflow: hidden;
+}
+.release-page {
+    height: 100%;
+    display: flex;
+    padding: 24px 32px;
+    overflow: auto;
+    
+    .aside {
+        flex: 0 0 200px;
+        padding: 8px;
+        margin-right: 48px;
+        border-right: 1px solid #e9e9e9;
+
+        .versions {
+            .item {
+                padding: 4px 8px;
+                height: 32px;
+                cursor: pointer;
+                border-radius: 2px;
+                margin-top: 8px;
+                &:not(.item__activated):hover {
+                    background: #f9f9f9;
+                }
+            }
+            .item__activated {
+                color: #3270ff;
+               
+                background-color: rgb(230, 244, 255);
+            }
+        }
+        
+    }
+}

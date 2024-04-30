@@ -1,0 +1,89 @@
+$text-normal: #d9dadd;
+$text-activated: #3270ff;
+$text-link-hover: #f1f1f1;
+$text-disabled: #8c8c8c;
+$bg-header: #282e38;
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    padding: 0 16px;
+    color: $text-normal;
+    background: $bg-header;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.menu {
+    display: flex;
+    font-size: 14px;
+
+    .svg-icon {
+        vertical-align: -2px;
+    }
+
+    .menu-item {
+        margin-left: 24px;
+        color: $text-normal;
+        cursor: pointer;
+
+        .svg-icon {
+            path {
+                fill: $text-normal;
+            }
+
+            circle {
+                stroke: $text-normal;
+            }
+        }
+
+        &:not(.menu-item__disabled, .menu-item__activated):hover {
+            color: $text-link-hover;
+
+            .svg-icon {
+                path {
+                    fill: $text-link-hover;
+                }
+
+                circle {
+                    stroke: $text-link-hover;
+                }
+            }
+        }
+    }
+
+    .menu-item__activated {
+        color: $text-activated;
+        cursor: pointer;
+
+        .svg-icon {
+            path {
+                fill: $text-activated;
+            }
+
+            circle {
+                stroke: $text-activated;
+            }
+        }
+    }
+
+    .menu-item__disabled {
+        color: $text-disabled;
+        cursor: not-allowed;
+
+        .svg-icon {
+            path {
+                fill: $text-disabled;
+            }
+
+            circle {
+                stroke: $text-disabled;
+            }
+        }
+    }
+}
