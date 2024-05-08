@@ -40,7 +40,7 @@ export default function Release() {
     return (
         <div className="release-page">
             <div className="aside">
-                <h4 className="title">Versions</h4>
+                <h6 className="title">Versions</h6>
                 <ul className="versions">
                     {versions.map((item) => (
                         <li

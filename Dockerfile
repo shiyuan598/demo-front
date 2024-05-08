@@ -10,5 +10,5 @@ RUN npm run build
 FROM nginx
 COPY --from=build-stage /app/build /home/app
 COPY nginx.conf /etc/nginx/nginx.conf
-EXPOSE 9023
+EXPOSE 9041
 CMD ["nginx", "-g", "daemon off;"]
