@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="58px" viewBox="0 0 50 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <defs>
+        <linearGradient x1="34.6193821%" y1="10.6322721%" x2="57.3419957%" y2="89.3677279%" id="linearGradient-1">
+            <stop stop-color="#8CE8CA" offset="0%"></stop>
+            <stop stop-color="#9FF1D6" offset="9.63441212%"></stop>
+            <stop stop-color="#9FF1D6" offset="56.0406944%"></stop>
+            <stop stop-color="#A8FCE0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="35.485774%" y1="10.9061976%" x2="50%" y2="89.0938024%" id="linearGradient-2">
+            <stop stop-color="#10C6AE" offset="0%"></stop>
+            <stop stop-color="#00D6B9" offset="16.0674653%"></stop>
+            <stop stop-color="#00D6B9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="2.41280936%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#A4F7DC" offset="0%"></stop>
+            <stop stop-color="#92EBCD" offset="48.6510376%"></stop>
+            <stop stop-color="#10C6AD" offset="48.8113209%"></stop>
+            <stop stop-color="#10C7AE" offset="48.9642175%"></stop>
+            <stop stop-color="#06D0B4" offset="57.3298173%"></stop>
+            <stop stop-color="#00D6B9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="60.5250903%" y1="0%" x2="38.8425426%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#2362F6" offset="0%"></stop>
+            <stop stop-color="#3370FF" offset="13.8442076%"></stop>
+            <stop stop-color="#3370FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="64.1177972%" y1="0%" x2="40.2477693%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#70B3F0" offset="0%"></stop>
+            <stop stop-color="#88C2F6" offset="16.7888259%"></stop>
+            <stop stop-color="#8AC3F7" offset="85.4965027%"></stop>
+            <stop stop-color="#9FCFFC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-6">
+            <stop stop-color="#8AC3F7" offset="0%"></stop>
+            <stop stop-color="#88C1F5" offset="42.7587041%"></stop>
+            <stop stop-color="#70B3F0" offset="49.4391714%"></stop>
+            <stop stop-color="#70B3F0" offset="49.878681%"></stop>
+            <stop stop-color="#2362F6" offset="50.0613883%"></stop>
+            <stop stop-color="#2564F7" offset="51.1761544%"></stop>
+            <stop stop-color="#3370FF" offset="59.6031581%"></stop>
+            <stop stop-color="#3370FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-704.000000, -407.000000)">
+            <g id="编组-78" transform="translate(301.000000, 180.000000)">
+                <g id="编组-70" transform="translate(356.000000, 157.000000)">
+                    <g id="编组-79" transform="translate(0.000000, 34.000000)">
+                        <g id="编组-73" transform="translate(32.000000, 24.000000)">
+                            <g id="icon" transform="translate(40.000000, 40.500000) scale(-1, 1) translate(-40.000000, -40.500000) translate(15.000000, 12.000000)">
+                                <g id="编组-88" transform="translate(0.000000, 7.585859)">
+                                    <path d="M7.27595761e-12,0 L13.236405,0 C14.9236473,5.78237033e-16 16.4294591,1.0587091 17.0004179,2.64640956 L23.5697436,20.914141 L23.5697436,20.914141 L6.46781454,20.914141 C4.21679965,16.574158 2.80254844,13.4174556 2.2250609,11.4440337 C1.64757336,9.47061181 0.905886392,5.65593391 7.27595761e-12,0 Z" id="路径-22" fill="url(#linearGradient-1)" transform="translate(11.784872, 10.457070) scale(-1, -1) translate(-11.784872, -10.457070) "></path>
+                                    <path d="M0,20.914141 L13.3313832,20.9220148 C15.017759,20.9230108 16.522368,21.9815383 17.0930336,23.5684236 L23.6629565,41.8378157 L23.6629565,41.8378157 L6.56102745,41.8378157 C4.03251012,37.0691755 2.46540285,33.6499446 1.85970564,31.5801231 C1.25400844,29.5103016 0.634106556,25.9549742 0,20.914141 Z" id="路径-22" fill="url(#linearGradient-2)" transform="translate(11.831478, 31.375978) scale(-1, 1) translate(-11.831478, -31.375978) "></path>
+                                    <path d="M16.6802249,0.25396448 C21.0065884,7.42831986 23.1697702,14.3357624 23.1697702,20.9762921 C23.1697702,27.6168217 21.0065884,34.4861484 16.6802249,41.5842721" id="路径-23" stroke="url(#linearGradient-3)"></path>
+                                </g>
+                                <g id="编组-87" transform="translate(23.535583, 0.000000)">
+                                    <path d="M0.218889626,57 L6.7028974,33.6286459 C7.54374597,30.5978399 10.3028365,28.5 13.4481204,28.5 L26.4644165,28.5 L26.4644165,28.5 C25.8838073,34.6157101 25.1793821,39.4938025 24.3511408,43.1342771 C23.5228996,46.7747517 21.7205002,51.3966594 18.9439427,57 L0.218889626,57 Z" id="路径-21" fill="url(#linearGradient-4)" transform="translate(13.341653, 42.750000) scale(-1, 1) translate(-13.341653, -42.750000) "></path>
+                                    <path d="M0,28.5 L6.54339114,5.11385474 C7.38935035,2.09038805 10.1449075,3.24126778e-15 13.2844931,0 L26.4644165,0 L26.4644165,0 C26.1128079,6.06683547 25.1516181,11.4176192 23.5808472,16.0523513 C22.0100762,20.6870834 20.5311114,24.8362996 19.1439527,28.5 L0,28.5 Z" id="路径-21" fill="url(#linearGradient-5)" transform="translate(13.232208, 14.250000) scale(-1, -1) translate(-13.232208, -14.250000) "></path>
+                                    <path d="M0.960885328,0.210458562 C5.78576494,10.9976204 8.19820475,20.4285531 8.19820475,28.5032566 C8.19820475,36.5779602 5.63281783,46.0088928 0.502043991,56.7960547" id="路径-23" stroke="url(#linearGradient-6)" transform="translate(4.350124, 28.503257) scale(-1, 1) translate(-4.350124, -28.503257) "></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

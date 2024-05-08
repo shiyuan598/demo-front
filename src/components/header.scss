@@ -17,6 +17,12 @@ $bg-header: #282e38;
 
 .title {
     font-size: 18px;
+
+    .logo {
+        height: 18px;
+        width: 18px;
+        vertical-align: -2px;
+    }
 }
 
 .menu {

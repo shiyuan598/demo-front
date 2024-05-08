@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import { ReactComponent as LogoIcon } from "../assets/logo.svg";
 import { ReactComponent as WhatsNewIcon } from "../assets/whatsnew.svg";
 import { ReactComponent as HelpIcon } from "../assets/help.svg";
 import { ReactComponent as FeedbackIcon } from "../assets/feedback.svg";
@@ -40,7 +41,7 @@ export default function Header() {
 
     return (
         <div className="header">
-            <h4 className="title">Xway OS Docs</h4>
+            <h4 className="title"> <LogoIcon className="logo" /> Xway OS Docs</h4>
             <ul className="menu">
                 {menuItems.map((item) => (
                     <li
