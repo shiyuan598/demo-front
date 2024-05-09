@@ -10,5 +10,9 @@ RUN npm run build
 FROM nginx
 COPY --from=build-stage /app/build /home/app
 COPY nginx.conf /etc/nginx/nginx.conf
+
+# 安装Vim编辑器
+RUN apt-get update && apt-get install -y vim
+
 EXPOSE 9041
 CMD ["nginx", "-g", "daemon off;"]
