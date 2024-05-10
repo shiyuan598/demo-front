@@ -41,7 +41,7 @@ export default function Header() {
 
     return (
         <div className="header">
-            <h4 className="title"> <LogoIcon className="logo" /> Xway OS Docs</h4>
+            <h4 className="title"> <LogoIcon className="logo" /> XwayOS</h4>
             <ul className="menu">
                 {menuItems.map((item) => (
                     <li
