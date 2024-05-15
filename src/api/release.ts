@@ -1,15 +1,15 @@
-import { get } from "./fetchTool";
+import { get } from "./request";
 const baseUrl = process.env.REACT_APP_API_URL;
 
-function getVersionList() {
-    return get(baseUrl + "/release/list");
+function getReleaseList() {
+    return get(`${baseUrl}/feature/releases`);
 }
 
-function getVersionDetail(filePath: string) {
-    return get(baseUrl + "/release/info", { filePath });
+function getReleaseDetail(filePath: string) {
+    return get(`${baseUrl}/feature/releases/info`, { filePath });
 }
 
 export default {
-    getVersionList,
-    getVersionDetail
+    getReleaseList,
+    getReleaseDetail
 };

@@ -13,7 +13,7 @@ export default function Detail(props: { versions: { name: string; path: string }
         }
         const path = versions.find((item) => item.name === current)?.path;
         path &&
-            releaseApi.getVersionDetail(path).then((v) => {
+            releaseApi.getReleaseDetail(path).then((v) => {
                 if (contentRef.current) {
                     contentRef.current.innerHTML = v.data.content;
                 }

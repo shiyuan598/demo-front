@@ -26,7 +26,7 @@ export default function Release() {
     }, [location.pathname, versions]);
 
     useEffect(() => {
-        releaseApi.getVersionList().then((v) => {
+        releaseApi.getReleaseList().then((v) => {
             console.info(v);
             v && setVersions(v.data);
         });
