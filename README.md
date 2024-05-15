@@ -85,7 +85,7 @@ docker build -t xwayos-docs-frontend:v0.1 .
 ```
 2.启动容器
 ```bash
-docker run --name xwayos-docs-frontend --network xwayos-net -p 9041:9041 -d xwayos-docs-frontend:v0.1
+docker run --name xwayos-docs-frontend --restart=always --network xwayos-net -p 9041:9041 -d xwayos-docs-frontend:v0.1
 ```
 3.进入容器
 ```bash
