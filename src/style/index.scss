@@ -81,3 +81,36 @@ main {
         }
     }
 }
+
+.feedback-page {
+    height: 100%;
+    padding: 0 24px;
+    overflow: auto;
+    .banner {
+        height: 88px;
+        background: #FFFFFF;
+        border-radius: 2px;
+        padding: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .option-container {
+            padding-right: 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 14px;
+            color: #303030;
+
+            .option+.option {
+                margin-left: 32px;
+            }
+
+            .label {
+                font-size: 14px;
+                padding-right: 16px;
+            }
+        }
+    }
+}
