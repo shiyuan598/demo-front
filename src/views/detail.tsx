@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { releaseApi } from "../api";
+import { Empty } from "antd";
 
 export default function Detail(props: { versions: { name: string; path: string }[] }) {
     const { versions } = props;

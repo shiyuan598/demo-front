@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
-import dayjs from "dayjs";
 import { Dayjs } from "dayjs";
-import { Image, Input, Select, DatePicker, List, Spin, Button, Space, Tag } from "antd";
-import { LikeOutlined, MessageOutlined, StarOutlined, DeleteOutlined, FileImageOutlined } from "@ant-design/icons";
-import IconIssue from "../assets/issue.png";
-import IconReply from "../assets/reply.png";
-import { ReactComponent as IconVersion } from "../assets/version.svg";
-import { ReactComponent as IconDate } from "../assets/date.svg";
-import { ReactComponent as IconAttachment } from "../assets/attachment.svg";
+import { Select, DatePicker, Button, Spin } from "antd";
 import { releaseApi, feedbackApi } from "../api";
+import AddIssue from "../components/addIssue";
+import IssueReply from "../components/issueReply";
 const { RangePicker } = DatePicker;
 interface Issue {
     issueId: number;
@@ -26,10 +21,14 @@ interface Issue {
 }
 
 export default function feedback() {
-    const [curVersion, setCurVersion] = useState<string>();
+    const [curVersion, setCurVersion] = useState<string>("");
     const [dateSpan, setDateSpan] = useState<[Dayjs, Dayjs] | null>();
     const [versions, setVersions] = useState<{ name: string; path: string }[]>([]);
+    const [updateFlag, setUdateFlag] = useState(0);
+    const [addIssueVisible, setAddIssueVisible] = useState(false);
+    
     const [issues, setIssues] = useState<Issue[]>([]);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         releaseApi.getReleaseList().then((v) => {
             console.info(v);
@@ -38,48 +37,27 @@ export default function feedback() {
     }, []);
 
     useEffect(() => {
-        feedbackApi.getIssueList().then((v) => {
-            console.info(v);
-            v && setIssues(v.data);
-        });
-    }, []);
-
-    () => {
-        feedbackApi.getIssueList({ version: 1.1, start: "2024-05-14", end: "2024-05-14" });
-        feedbackApi.getIssueById(13);
-        // feedbackApi.getIssueAttachmentById(15).then((res) => {
-        //     if (res instanceof Blob) {
-        //         let reader = new FileReader();
-        //         reader.readAsDataURL(res);
-        //         reader.onload = (e) => {
-        //             let url = e?.target?.result;
-        //             setImgData(url as string);
-        //         };
-        //     }
-        // });
-        feedbackApi.updateIssue(20, { title: "hhahd" });
-        feedbackApi.deleteIssue(27);
-
-        // feedbackApi.addReply({ issueId: 20, content: "fssafaf" });
-        feedbackApi.updateReply(19, { content: "hello" });
-        feedbackApi.deleteReply(18);
-
-        // feedbackApi.getReplyAttachmentById(13).then((res) => {
-        //     if (res instanceof Blob) {
-        //         let reader = new FileReader();
-        //         reader.readAsDataURL(res);
-        //         reader.onload = (e) => {
-        //             let url = e?.target?.result;
-        //             setImgData(url as string);
-        //         };
-        //     }
-        // });
-    };
-
-    const [imgData, setImgData] = useState("");
+        setLoading(true);
+        let start = "";
+        let end = "";
+        if (Array.isArray(dateSpan) && dateSpan.length === 2) {
+            [start, end] = dateSpan.map((item) => item.format("YYYY-MM-DD"));
+        }
+        feedbackApi
+            .getIssueList({
+                version: curVersion,
+                start,
+                end
+            })
+            .then((v) => {
+                console.info(v);
+                v && setIssues(v.data);
+            })
+            .finally(() => setLoading(false));
+    }, [curVersion, dateSpan, updateFlag]);
 
     const versionChange = (value: string) => {
-        setCurVersion(value);
+        setCurVersion(value || "");
     };
     const dateChange = (dates: [Dayjs | null, Dayjs | null] | null, dateStrings: [string, string]) => {
         if (dates && Array.isArray(dates) && dates.length === 2) {
@@ -88,13 +66,6 @@ export default function feedback() {
             setDateSpan(null);
         }
     };
-
-    const IconText = ({ icon, text }: { icon: React.FC; text: string }) => (
-        <Space>
-            {React.createElement(icon)}
-            {text}
-        </Space>
-    );
 
     return (
         <div className="feedback-page">
@@ -115,45 +86,17 @@ export default function feedback() {
                         <RangePicker onChange={dateChange} />
                     </div>
                 </div>
-                <Button type="primary">反馈问题</Button>
+                <Button type="primary" onClick={() => setAddIssueVisible(true)}>
+                    反馈问题
+                </Button>
             </div>
+            <Spin spinning={loading}>
+                {issues.map((item) => (
+                    <IssueReply key={item.issueId} issue={item} setUdateFlag={setUdateFlag}></IssueReply>
+                ))}
+            </Spin>
 
-            <List
-                itemLayout="vertical"
-                size="large"
-                dataSource={issues}
-                renderItem={(item) => (
-                    <>
-                    <List.Item
-                        key={item.issueId}
-                        actions={[
-                            <IconText icon={DeleteOutlined} text="删除" key="list-vertical-star-o" />,
-                            <IconText icon={MessageOutlined} text="回复" key="list-vertical-message" />,
-                            <IconText icon={FileImageOutlined} text="附件" key="list-vertical-like-o" />
-                        ]}>
-                        <List.Item.Meta
-                            avatar={<Image height={20} src={IconIssue} />}
-                            title={item.issueTitle}
-                        />
-                        <p>{item.issueContent}</p>
-                        <Tag>{item.issueVersion}</Tag>
-                        <Tag>{item.issueCreatetime}</Tag>
-                    </List.Item>
-                    <List.Item
-                        key={item.replyId}
-                        actions={[
-                            <IconText icon={DeleteOutlined} text="删除" key="list-vertical-star-o" />,
-                            <IconText icon={FileImageOutlined} text="附件" key="list-vertical-like-o" />
-                        ]}>
-                        <List.Item.Meta
-                            avatar={<Image height={20} src={IconReply} />}
-                        />
-                        <p>{item.replyContent}</p>
-                        <Tag>{item.issueCreatetime}</Tag>
-                    </List.Item>
-                    </>
-                )}></List>
-            <img width={"100%"} height={"100%"} src={imgData} alt="" />
+            <AddIssue modalShow={addIssueVisible} setModalShow={setAddIssueVisible} setUpdateFlag={setUdateFlag} />
         </div>
     );
 }

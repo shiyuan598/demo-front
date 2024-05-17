@@ -15,7 +15,6 @@ const request = (
     params?: { [propName: string]: string | number } | FormData,
     isJson: boolean = true
 ) => {
-    console.info("method", method);
     let body = undefined;
     if (["POST", "PUT", "DELETE"].includes(method) && params) {
         body = isJson ? JSON.stringify(params) : (params as FormData);
