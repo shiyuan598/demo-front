@@ -1,8 +1,8 @@
 import { Modal, Form, Input, Button, message, Spin, Upload } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import type { UploadProps } from "antd";
-import React, { useEffect, useState, forwardRef } from "react";
-import { releaseApi, feedbackApi } from "../api";
+import React, { useState, forwardRef } from "react";
+import { feedbackApi } from "../api";
 
 const { TextArea } = Input;
 

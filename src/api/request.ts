@@ -5,8 +5,30 @@ export const checkResponse = (response: Response) => {
     if (response.status === 504) {
         return Promise.reject("系统繁忙，请稍后重试！");
     }
+    if (response.status === 401) {
+        localStorage.setItem("userInfo", "{}");
+        window.location.href = "/login";
+        return Promise.reject("您没有权限或未登录！");
+    }
 
     return Promise.resolve();
+};
+
+const getAuthorization = () => {
+    let Authorization = "";
+    try {
+        let data = localStorage.getItem("userInfo");
+        const userInfo = JSON.parse(data as string);
+        Authorization = userInfo?.token;
+    } catch (error) {
+        Authorization = "";
+    }
+
+    if (Authorization) {
+        return { Authorization };
+    } else {
+        return undefined;
+    }
 };
 
 const request = (
@@ -21,7 +43,7 @@ const request = (
     }
     const fetchOptions: RequestInit = {
         method,
-        headers: isJson ? { "Content-Type": "application/json" } : undefined,
+        headers: { ...(isJson ? { "Content-Type": "application/json" } : undefined), ...getAuthorization() },
         body
     };
 

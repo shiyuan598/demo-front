@@ -115,3 +115,21 @@ main {
         }
     }
 }
+
+.login-page {
+    text-align: center;
+    padding: 24px;
+    width: 360px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px #0000001a;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+
+    .title {
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+}
