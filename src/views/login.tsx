@@ -56,7 +56,7 @@ export default function App() {
                         <Input placeholder="请输入密码" type="password" />
                     </Form.Item>
 
-                    <Form.Item>
+                    <Form.Item wrapperCol={{span: 24}}>
                         <Space>
                             <Button type="primary" htmlType="submit">
                                 登录

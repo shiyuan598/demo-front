@@ -54,10 +54,13 @@ export default function Header() {
             }
         });
     };
+    const toLogin = () => {
+        history.push("/login");
+    };
 
     return (
         <div className="header">
-            <h4 className="title">
+            <h4 className="title" onDoubleClick={() => toLogin()}>
                 {" "}
                 <LogoIcon className="logo" /> XwayOS
             </h4>
