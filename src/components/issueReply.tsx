@@ -7,6 +7,7 @@ import showDeleteConfirm from "./deleteConfirm";
 import AddReply from "./addReply";
 import { feedbackApi } from "../api";
 import "./issue.scss";
+import { isLogin } from "../utils/auth";
 
 interface Issue {
     issueId: number;
@@ -122,15 +123,15 @@ export default function IssueReply(props: { issue: Issue; setUdateFlag: Function
                     <p className="body">{issueContent}</p>
                 </div>
                 <div className="actions">
-                    <IconText
+                    {isLogin() && <IconText
                         onClick={() => {
                             deleteIssue(issueId);
                         }}
                         icon={DeleteOutlined}
                         text="删除"
                         key="list-vertical-star-o"
-                    />
-                    {!replyContent && (
+                    />}
+                    {!replyContent && isLogin() && (
                         <IconText
                             onClick={() => {
                                 setAddReplyVisible(true);
@@ -164,14 +165,14 @@ export default function IssueReply(props: { issue: Issue; setUdateFlag: Function
                         </div>
                     </div>
                     <div className="actions">
-                        <IconText
+                        {isLogin() && <IconText
                             onClick={() => {
                                 deleteReply(replyId);
                             }}
                             icon={DeleteOutlined}
                             text="删除"
                             key="list-vertical-star-o"
-                        />
+                        />}
                         {replyFilename && (
                             <IconText
                                 onClick={() => {

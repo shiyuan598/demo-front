@@ -7,7 +7,6 @@ $bg-header: #282e38;
 
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 48px;
     padding: 0 16px;
@@ -28,6 +27,7 @@ $bg-header: #282e38;
 .menu {
     display: flex;
     font-size: 14px;
+    margin-left: auto;
 
     .svg-icon {
         vertical-align: -2px;
@@ -91,5 +91,24 @@ $bg-header: #282e38;
                 stroke: $text-disabled;
             }
         }
+    }
+}
+.account {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+    padding-right: 14px;
+    cursor: default;
+
+    .portrait {
+        height: 24px;
+        width: 24px;
+        background: url('../assets/portrait.png') 0 center / contain no-repeat;
+    }
+
+    .name {
+        margin-left: 8px;
+        font-size: 14px;
+        color: #D9DADD;
     }
 }

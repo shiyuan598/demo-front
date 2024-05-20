@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Input, Form, Spin, message, Space } from "antd";
-import {} from "antd";
 import { authApi } from "../api";
+import { setUserInfo } from "../utils/auth";
 
 export default function App() {
     const [loading, setLoading] = useState(false);
@@ -15,7 +15,7 @@ export default function App() {
             .then((v) => {
                 if (v.code === 0) {
                     // 将用户信息写入本地存储
-                    localStorage.setItem("userInfo", JSON.stringify(v.data));
+                    setUserInfo(v.data);
                     history.push("/");
                 } else {
                     message.error("用户名或密码错误！");
