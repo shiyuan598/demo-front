@@ -15,11 +15,11 @@ function App() {
             <main>
                 <Switch>
                     <Route path="/release" render={() => <Release />}></Route>
-                    <PrivateRoute path="/auth" component={Auth}></PrivateRoute>
                     <Route path="/help" render={() => <Help />}></Route>
                     <Route path="/feedback" render={() => <Feedback />}></Route>
                     <Route path="/login" render={() => <Login />}></Route>
                     <Redirect from="/" to="/release" exact></Redirect>
+                    <PrivateRoute path="/auth" component={Auth}></PrivateRoute>
                 </Switch>
             </main>
         </>
